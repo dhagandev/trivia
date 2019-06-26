@@ -1,7 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
-
+	<a href="{% url 'user_ranking' %}"><div class="btn">User Ranking</div></a>
 	{% if user.is_authenticated %}
+		<a href="{% url 'question' %}"><div class="btn">Question</div></a>
+		<a href="{% url 'user_profile' user.id %}"><div class="btn">My Profile</div></a>
     	<a href="{% url 'logout' %}"><div class="btn">Logout</div></a>
     {% else %}
 	    <a href="{% url 'signup' %}"><div class="btn">Sign Up</div></a>

@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'nav.html' %}
+
+<h1>Profile page</h1>
+
+{{profile.user}}
+{{profile.q_correct}}
+{{profile.q_answered}}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'nav.html' %}
+
+<h1>Question Display page</h1>
+{{question.category}}
+{{question.difficulty}}
+{{question.q_text}}
+{{question.correct_ans}}
+{{question.incorrect_ans}}
+
+{% for ans in answers %}
+
+	<a href="{{question.id}}/answer/{{ans}}">{{ans}}</a>
+
+{% endfor %}
+
+{% endblock %}

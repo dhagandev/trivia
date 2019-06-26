@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'nav.html' %}
+
+<h1>User Rankings</h1>
+
+{% for profile in all_profiles %}
+	<h3>{{ profile.user }}</h3>
+	<h3>{{ profile.q_correct }}</h3>
+	<h3>{{ profile.q_answered }}</h3>
+	<h3>{{ profile.percent }}%</h3>
+{% endfor %}
+
+{% endblock %}
