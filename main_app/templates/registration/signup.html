@@ -2,14 +2,18 @@
 {% block content %}
 {% include 'nav.html' %}
 
-<h1>Sign Up</h1>
+<div class="regist">
+	<div class="header">
+		<div class="title">Sign Up</div>
+	</div>
 
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
+	{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
 
-<form method="post" action="{% url 'signup' %}">
-	{% csrf_token %}
-	{{ form.as_p }}
-	<input type="submit" class="btn" value="signup">
-</form>
+	<form method="post" action="{% url 'signup' %}">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<input type="submit" class="btn" value="Sign Up">
+	</form>
+</div>
 
 {% endblock %}

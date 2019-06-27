@@ -29,3 +29,6 @@ class Question(models.Model):
     q_text = models.TextField()
     correct_ans = models.TextField()
     incorrect_ans = ArrayField(models.TextField())
+
+    def get_absolute_url(self):
+        return reverse('question_display', kwargs={'question_id': self.id})

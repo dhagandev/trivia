@@ -2,10 +2,26 @@
 {% block content %}
 {% include 'nav.html' %}
 
-<h1>Profile page</h1>
-
-{{profile.user}}
-{{profile.q_correct}}
-{{profile.q_answered}}
+<div class="arena">
+	<div class="header">
+		<div class="title">Check out your stats!</div>
+	</div>
+	<table class="ranking">
+		<thead>
+			<tr>
+				<th>Questions Correct</th>
+				<th>Questions Answered</th>
+				<th>Accuracy</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>{{ profile.q_correct }}</td>
+				<td class="num-field">{{ profile.q_answered }}</td>
+				<td class="num-field">{{ profile.percent }}%</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 
 {% endblock %}

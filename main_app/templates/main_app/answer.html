@@ -2,6 +2,23 @@
 {% block content %}
 {% include 'nav.html' %}
 
-<h1>Answer page</h1>
+<div class="arena">
+	<div class="header"> 
+		<p>{{user|upper}}</p>
+		<p class="huge">. . .</p>
+	</div>
+	<p>We asked you:</p>
+	<p class="huge highlight">{{question.q_text}}</p>
+	<p>And you said: {{player_choice}}</p>
+	{% if choiceCorrect %}
+		<p>And that is <span class="huge correct">CORRECT</span></p>
+		<p>Good job!</p>
+	{% else %}
+		<p>And that is <span class="huge wrong">WRONG</span></p>
+		<p>Study up!</p>
+	{% endif %}
+
+	<a href='/question'><div class="btn nextq">Next Question?</div></a>
+</div>
 
 {% endblock %}

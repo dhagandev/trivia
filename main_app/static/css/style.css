@@ -1,0 +1,171 @@
+body {
+	background: #E6DCE5;
+	margin: 0;
+	height: 100%;
+	width: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+.nav-bar {
+	background: #909090;
+	width: 100%;
+	height: 100px;
+}
+
+.nav {
+	display: inline-block;
+	margin-top: 7px;
+	float:right;
+}
+
+.logo-btn {
+	display: inline-block;
+	margin-right: 20px;
+}
+
+.btn-block {
+	display: inline-block;
+	font-family: 'Chela One', cursive;
+	font-size: 24px;
+}
+
+.btn {
+	color: white;
+	margin: 5px 15px;
+	background: #F9A603;
+	border-radius: 15px;
+	text-align: center;
+	width: 200px;
+	height: 35px;
+	line-height: 35px;
+}
+
+.logo {
+	display: flex;
+	flex-direction: row;
+}
+
+.logo-letter {
+	width: 100px;
+	height: 100px;
+	color: white;
+	font-family: 'Bungee Shade', cursive;
+	font-weight: bold;
+	font-size: 48px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.logo-t {
+	background: #F70025;
+}
+
+.logo-r, .logo-i2 {
+	background: #7CAA2D;
+}
+
+.logo-i {
+	background: #F9A603;
+}
+
+.logo-v {
+	background: #31A9B8;
+}
+
+.logo-a {
+	background: #F9A603;
+}
+
+.arena {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.title {
+	font-family: 'Chela One', cursive;
+	font-size: 96px;
+}
+
+.arena p {
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.header {
+	margin: 50px;
+	text-align: center;
+	letter-spacing: .75em;
+}
+
+.header-logo {
+	height: 100px;
+	width: 600px;
+	margin: 0 auto;
+}
+
+.ranking {
+	margin: 0 auto 50px;
+	font-size: 18px;
+}
+
+thead {
+	background: #909090;
+	font-family: 'Chela One', cursive;
+	font-size: 24px;
+}
+
+tbody tr {
+	line-height: 36px;
+}
+
+td {
+	width: 250px;
+}
+
+.num-field {
+	width: 100px;
+}
+
+.regist {
+	width: 600px;
+	margin: 0 auto;
+}
+
+.question {
+	font-style: italic;
+	font-size: 28px;
+}
+
+.answers {
+	margin-top: 24px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+}
+
+.huge {
+	font-size: 72px;
+	font-style: italic;
+}
+
+.highlight {
+	color: #909090;
+}
+
+.correct {
+	color: green;
+}
+
+.wrong {
+	color: red;
+}
+
+.nextq {
+	margin: 0 auto;
+}

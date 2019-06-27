@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
-import requests
-import random
+import requests, random, math
 
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
@@ -29,6 +28,7 @@ def signup(request):
 def user_profile(request, user_id):
 	user = User.objects.get(id=user_id)
 	profile = Profile.objects.get(user=user)
+	profile.percent = math.floor(profile.q_correct / profile.q_answered * 100)
 	return render(request, 'main_app/profile.html', {
 		'profile': profile,
 	})
@@ -37,7 +37,7 @@ def user_ranking(request):
 	all_profiles = Profile.objects.all()
 	for profile in all_profiles: 
 		if (profile.q_answered != 0):
-			profile.percent = profile.q_correct / profile.q_answered
+			profile.percent = math.floor(profile.q_correct / profile.q_answered * 100)
 		else:
 			profile.percent = 0
 	return render(request, 'main_app/user_ranking.html', {
@@ -75,13 +75,15 @@ def answer(request, question_id, player_choice):
 	question = Question.objects.get(id=question_id)
 	correct = question.correct_ans
 	profile = Profile.objects.get(user=request.user)
-	if (correct == player_choice):
+	choiceCorrect = correct == player_choice
+	if (choiceCorrect):
 		profile.q_correct += 1
 	profile.q_answered += 1
 	print(profile.q_answered)
 	print(profile.q_correct)
 	profile.save()
 	return render(request, 'main_app/answer.html', {
+		'choiceCorrect': choiceCorrect,
 		'question': question,
 		'player_choice': player_choice
 	})
